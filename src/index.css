@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 30% 98%;
+    --foreground: 260 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 10%;
+    --primary: 272 72% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 326 78% 95%;
+    --secondary-foreground: 326 78% 30%;
+    --muted: 260 10% 96%;
+    --muted-foreground: 260 10% 40%;
+    --accent: 326 78% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 260 10% 90%;
+    --input: 260 10% 90%;
+    --ring: 272 72% 47%;
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar: 0 0% 100%;
+    --sidebar-foreground: 260 10% 10%;
+    --sidebar-primary: 272 72% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 326 78% 95%;
+    --sidebar-accent-foreground: 326 78% 30%;
+    --sidebar-border: 260 10% 90%;
+    --sidebar-ring: 272 72% 47%;
+
+    /* Fonts */
+    --font-sans: 'Vazirmatn', 'DM Sans', sans-serif;
+    --font-serif: Lora, serif;
+    --font-mono: IBM Plex Mono, monospace;
+  }
+
+  .dark {
+    --background: 260 20% 4%;
+    --foreground: 260 10% 98%;
+    --card: 260 20% 6%;
+    --card-foreground: 260 10% 98%;
+    --popover: 260 20% 6%;
+    --popover-foreground: 260 10% 98%;
+    --primary: 272 72% 60%;
+    --primary-foreground: 260 10% 4%;
+    --secondary: 326 78% 10%;
+    --secondary-foreground: 326 78% 80%;
+    --muted: 260 20% 10%;
+    --muted-foreground: 260 10% 65%;
+    --accent: 326 78% 60%;
+    --accent-foreground: 260 10% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 260 10% 98%;
+    --border: 260 20% 15%;
+    --input: 260 20% 15%;
+    --ring: 272 72% 60%;
+
+    /* Sidebar */
+    --sidebar: 260 20% 6%;
+    --sidebar-foreground: 260 10% 98%;
+    --sidebar-primary: 272 72% 60%;
+    --sidebar-primary-foreground: 260 10% 4%;
+    --sidebar-accent: 260 20% 10%;
+    --sidebar-accent-foreground: 326 78% 80%;
+    --sidebar-border: 260 20% 15%;
+    --sidebar-ring: 272 72% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    direction: rtl;
+  }
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/70 dark:bg-black/70 border border-white/20 dark:border-white/10;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+}
